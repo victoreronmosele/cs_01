@@ -49,70 +49,73 @@ class _LandingPageState extends State<LandingPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Opacity(
-                    opacity: _selectedIndex == 0 ? 1 : 0,
-                    child: Text(
-                      'Your balance',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14.0,
-                          color: Color(0xffA6AAB4)),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Text(
-                        appBarTitleList[_selectedIndex],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Opacity(
+                      opacity: _selectedIndex == 0 ? 1 : 0,
+                      child: Text(
+                        'Your balance',
                         style: TextStyle(
-                          color: Color(0xff171D33),
-                          fontSize: 32.0,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: GoogleFonts.sarabun().fontFamily,
-                        ),
-                      )),
-                      Stack(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xffECECFB)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(3.0),
-                              child: CircleAvatar(
-                                backgroundImage: AssetImage(
-                                    'assets/images/profile_image.png'),
-                                radius: 16,
-                              ),
-                            ),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14.0,
+                            color: Color(0xffA6AAB4)),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                            child: Text(
+                          appBarTitleList[_selectedIndex],
+                          style: TextStyle(
+                            color: Color(0xff171D33),
+                            fontSize: 32.0,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: GoogleFonts.sarabun().fontFamily,
                           ),
-                          Positioned(
-                            right: 0,
-                            top: 0,
-                            child: Container(
+                        )),
+                        Stack(
+                          children: [
+                            Container(
                               decoration: BoxDecoration(
-                                  shape: BoxShape.circle, color: Colors.white),
+                                  shape: BoxShape.circle,
+                                  color: Color(0xffECECFB)),
                               child: Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Color(0xff54D3AD),
-                                  ),
-                                  height: 8.0,
-                                  width: 8.0,
+                                padding: const EdgeInsets.all(3.0),
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      'assets/images/profile_image.png'),
+                                  radius: 16,
                                 ),
                               ),
                             ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
+                            Positioned(
+                              right: 0,
+                              top: 0,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle, color: Colors.white),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(2.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xff54D3AD),
+                                    ),
+                                    height: 8.0,
+                                    width: 8.0,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               Expanded(child: screenList[_selectedIndex]),
             ],
